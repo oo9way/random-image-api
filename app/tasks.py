@@ -6,6 +6,7 @@ import time
 import threading
 
 from django.core import files
+import uuid
 
 
 @shared_task
@@ -16,7 +17,7 @@ def download_images():
     images = []
 
     def download_image():
-        url = "https://picsum.photos/200/300"
+        url = "https://picsum.photos/1024/"
         response = requests.get(url, stream=True)
 
         lf = tempfile.NamedTemporaryFile()
@@ -25,7 +26,7 @@ def download_images():
                 raise FileNotFoundError
             lf.write(block)
 
-        file_name = url.split("/")[-1] + ".png"
+        file_name = str(uuid.uuid4()) + ".png"
         image = Images()
         image.image.save(file_name, files.File(lf), save=False)
         images.append(image)
