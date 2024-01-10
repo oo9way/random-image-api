@@ -41,7 +41,7 @@ media
 
 # IntelliJ
 out/
-Raximov.2004
+db.sqlite3
 # JIRA plugin
 atlassian-ide-plugin.xml
 
