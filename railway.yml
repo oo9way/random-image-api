@@ -3,6 +3,7 @@ FROM python:3.10.13-slim
 # Set environment variables
 ENV SECRET_KEY django-insecure-wflg-n%4pqru^gdr0jk5te%eu)#(s8%o-857p3okjqf041p-kb
 ENV DEBUG True
+ENV ALLOWED_HOSTS random-image-api-production.up.railway.app,127.0.0.1
 ENV CELERY_BROKER_URL roundhouse.proxy.rlwy.net:15158
 ENV CELERY_RESULT_BACKEND roundhouse.proxy.rlwy.net:15158
 
