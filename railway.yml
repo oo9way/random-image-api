@@ -34,8 +34,8 @@ COPY .env /app/
 # Start the application
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
-
-# Separate process for Celery
-CMD ["celery", "-A", "imagegenerator", "worker", "--loglevel=info"]
-CMD ["celery", "-A", "imagegenerator", "beat", "--loglevel=info"]
-
+#
+## Separate process for Celery
+#CMD ["celery", "-A", "imagegenerator", "worker", "--loglevel=info"]
+#CMD ["celery", "-A", "imagegenerator", "beat", "--loglevel=info"]
+#
