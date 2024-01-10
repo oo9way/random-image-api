@@ -39,5 +39,3 @@ CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 CMD ["celery", "-A", "imagegenerator", "worker", "--loglevel=info"]
 CMD ["celery", "-A", "imagegenerator", "beat", "--loglevel=info"]
 
-# Run Redis as a service
-CMD ["redis-server"]
