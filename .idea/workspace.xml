@@ -5,10 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77f6dba2-1454-450e-a614-f57a18f0d1bb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagegenerator/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/imagegenerator/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/railway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/railway.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/imagegenerator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tasks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagegenerator/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagegenerator/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagegenerator/celery.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagegenerator/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagegenerator/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagegenerator/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/railway.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/download_images.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1704878703507</updated>
       <workItem from="1704878711475" duration="692000" />
-      <workItem from="1704880429963" duration="6677000" />
+      <workItem from="1704880429963" duration="6914000" />
     </task>
     <servers />
   </component>
