@@ -29,10 +29,10 @@ EXPOSE 8000
 
 # Load environment variables from .env file
 ENV PATH /app:$PATH
-COPY .env /app/
+#COPY .env /app/
 
 # Start the application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+#CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 #
 ## Separate process for Celery
