@@ -15,9 +15,6 @@ COPY requirements.txt /app/
 # Install any needed packages specified in requirements.txt
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# Install Gunicorn
-RUN pip install gunicorn
-
 # Copy the current directory contents into the container at /app
 COPY . /app/
 
@@ -35,7 +32,8 @@ ENV PATH /app:$PATH
 COPY .env /app/
 
 # Start the application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "imagegenerator.wsgi:application"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
 
 # Separate process for Celery
 CMD ["celery", "-A", "imagegenerator", "worker", "--loglevel=info"]
