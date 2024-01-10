@@ -23,12 +23,8 @@ COPY . /app/
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
-CMD ["celery", "-A", "imagegenerator", "worker", "--loglevel=info"]
-CMD ["celery", "-A", "imagegenerator", "beat", "--loglevel=info"]
+RUN celery -A imagegenerator worker --loglevel=info
   
-  # Run Redis as a service
-CMD ["redis-server"]
-
 
   # Run migrations
 RUN python manage.py migrate
