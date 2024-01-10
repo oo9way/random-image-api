@@ -25,7 +25,7 @@ RUN python manage.py collectstatic --noinput
 RUN python manage.py migrate
 
 # Expose the port on which your Django app will run
-EXPOSE 8000
+#EXPOSE 8000
 
 # Load environment variables from .env file
 ENV PATH /app:$PATH
