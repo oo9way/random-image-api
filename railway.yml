@@ -1,6 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.10-slim
-
+FROM python:3.10.13-slim
 # Set environment variables
 ENV SECRET_KEY django-insecure-wflg-n%4pqru^gdr0jk5te%eu)#(s8%o-857p3okjqf041p-kb
 ENV DEBUG True
