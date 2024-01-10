@@ -23,22 +23,24 @@ COPY . /app/
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
-# Run migrations
+CMD ["celery", "-A", "imagegenerator", "worker", "--loglevel=info"]
+CMD ["celery", "-A", "imagegenerator", "beat", "--loglevel=info"]
+  
+  # Run Redis as a service
+CMD ["redis-server"]
+
+
+  # Run migrations
 RUN python manage.py migrate
 
-# Expose the port on which your Django app will run
+  # Expose the port on which your Django app will run
 EXPOSE 8000
 
-# Load environment variables from .env file
+  # Load environment variables from .env file
 ENV PATH /app:$PATH
 COPY .env /app/
 
-# Start the application
+  # Start the application
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "imagegenerator.wsgi:application"]
 
 # Separate process for Celery
-CMD ["celery", "-A", "imagegenerator", "worker", "--loglevel=info"]
-CMD ["celery", "-A", "imagegenerator", "beat", "--loglevel=info"]
-
-# Run Redis as a service
-CMD ["redis-server"]
