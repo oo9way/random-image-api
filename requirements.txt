@@ -10,8 +10,10 @@ click-didyoumean==0.3.0
 click-plugins==1.1.1
 click-repl==0.3.0
 Django==5.0.1
+gunicorn==21.2.0
 idna==3.6
 kombu==5.3.4
+packaging==23.2
 pillow==10.2.0
 prompt-toolkit==3.0.43
 python-dateutil==2.8.2

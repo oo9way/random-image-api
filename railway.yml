@@ -15,6 +15,7 @@ COPY requirements.txt /app/
 # Install any needed packages specified in requirements.txt
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
+
 # Copy the current directory contents into the container at /app
 COPY . /app/
 
@@ -25,17 +26,18 @@ RUN python manage.py collectstatic --noinput
 RUN python manage.py migrate
 
 # Expose the port on which your Django app will run
-#EXPOSE 8000
+EXPOSE 8000
 
 # Load environment variables from .env file
 ENV PATH /app:$PATH
-#COPY .env /app/
+COPY .env /app/
 
 # Start the application
-#CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "imagegenerator.wsgi:application"]
 
-#
-## Separate process for Celery
-#CMD ["celery", "-A", "imagegenerator", "worker", "--loglevel=info"]
-#CMD ["celery", "-A", "imagegenerator", "beat", "--loglevel=info"]
-#
+# Separate process for Celery
+CMD ["celery", "-A", "imagegenerator", "worker", "--loglevel=info"]
+CMD ["celery", "-A", "imagegenerator", "beat", "--loglevel=info"]
+
+# Run Redis as a service
+CMD ["redis-server"]
