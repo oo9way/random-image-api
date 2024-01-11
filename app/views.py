@@ -17,6 +17,7 @@ class HomePageView(TemplateView):
 def photo_api(request):
     image_filename = get_random_object().image.name
     image_path = os.path.join(settings.MEDIA_ROOT, image_filename)
+    print(image_path)
 
     target_width = int(request.GET.get("width", 0))
     target_height = int(request.GET.get("height", 0))
