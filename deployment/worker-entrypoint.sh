@@ -1,2 +1,2 @@
 #!/bin/sh
-celery -A railway_django_stack worker --beat -l INFO
+celery -A imagegenerator worker --beat -l INFO
