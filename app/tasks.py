@@ -9,7 +9,7 @@ from imagegenerator.celery import app
 
 
 @app.task(bind=True)
-def download_images():
+def download_images(*args):
     threads = []
     num_threads = 20
 
