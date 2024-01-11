@@ -29,6 +29,7 @@ CSRF_TRUSTED_ORIGINS = str(config("TRUSTED_ORIGINS")).split(",")
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -36,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.apps.AppConfig',
     "django_celery_beat",
-    "django_celery_results",
-    'app',
+    'django_celery_results',
+
+    'app.apps.AppConfig',
 ]
 
 MIDDLEWARE = [
