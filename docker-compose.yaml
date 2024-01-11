@@ -1,0 +1,35 @@
+version: "3"
+services:
+  server:
+    build: &app-build
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PYTHON_BUILD_VERSION: "3.10"
+    environment: &app-environment
+      DEBUG: "False"
+      RUN_MIGRATIONS: "True"
+      DJANGO_SECRET_KEY: "django-insecure-wflg-n%4pqru^gdr0jk5te%eu)#(s8%o-857p3okjqf041p-kb"
+
+      # Redis params
+      REDISHOST: "roundhouse.proxy.rlwy.net"
+      REDISPORT: "15158"
+      REDISUSER: "default"
+      REDISPASSWORD: "6MLHLgO32LIMCkGO5EP5ClDbmpoEmp42"
+    depends_on: &app-depends-on
+      - redis
+    command: /app/deployment/server-entrypoint.sh
+    ports:
+      - 8000:8000
+
+  worker:
+    build: *app-build
+    environment: *app-environment
+    depends_on: *app-depends-on
+    command: /app/deployment/worker-entrypoint.sh
+
+  redis:
+    restart: unless-stopped
+    image: redis:latest
+    expose:
+      - 15158

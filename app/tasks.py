@@ -7,10 +7,11 @@ import threading
 
 from django.core import files
 import uuid
+from imagegenerator.celery import app
 
 
-@shared_task
-def download_images():
+@app.task(bind=True, ignore_result=True)
+def download_images(self):
     threads = []
     num_threads = 20
 
