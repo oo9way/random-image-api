@@ -1,8 +1,6 @@
-from celery import shared_task
 from app.models import Images
 import requests
 import tempfile
-import time
 import threading
 
 from django.core import files
@@ -10,8 +8,8 @@ import uuid
 from imagegenerator.celery import app
 
 
-@app.task(bind=True, ignore_result=True)
-def download_images(self):
+@app.task(bind=True)
+def download_images():
     threads = []
     num_threads = 20
 

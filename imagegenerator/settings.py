@@ -37,9 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "django_celery_beat",
-    'django_celery_results',
-
     'app.apps.AppConfig',
 ]
 
@@ -125,16 +122,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-if not DEBUG:
-    REDIS_URL = f"redis://{config('REDISUSER', default='default')}:{config('REDISPASSWORD', default='')}@{config('REDISHOST', default='redis')}:{config('REDISPORT', default=6379)}"
-else:
-    REDIS_URL = 'redis://localhost:6379/0'
-
-# CELERY CONFIG
-CELERY_BROKER_URL = REDIS_URL
-CELERY_RESULT_BACKEND = config("CELERY_RESULT_BACKEND", default="django-db")
-CELERY_BEAT_SCHEDULER = config(
-    "CELERY_BEAT_SCHEDULER", default="django_celery_beat.schedulers.DatabaseScheduler"
-)
