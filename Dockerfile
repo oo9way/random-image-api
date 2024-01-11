@@ -42,8 +42,8 @@ RUN mkdir -p staticfiles && \
     chown -R python:python staticfiles
 
 # Make entrypoints executable
-RUN chmod +x /deployment/server-entrypoint.sh && \
-    chmod +x /deployment/worker-entrypoint.sh
+RUN chmod +x deployment/server-entrypoint.sh && \
+    chmod +x deployment/worker-entrypoint.sh
 
 USER 999
 

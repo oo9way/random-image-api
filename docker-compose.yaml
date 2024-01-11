@@ -18,7 +18,7 @@ services:
       REDISPASSWORD: "6MLHLgO32LIMCkGO5EP5ClDbmpoEmp42"
     depends_on: &app-depends-on
       - redis
-    command: /deployment/server-entrypoint.sh
+    command: deployment/server-entrypoint.sh
     ports:
       - 8000:8000
 
@@ -26,7 +26,7 @@ services:
     build: *app-build
     environment: *app-environment
     depends_on: *app-depends-on
-    command: /deployment/worker-entrypoint.sh
+    command: deployment/worker-entrypoint.sh
 
   redis:
     restart: unless-stopped
