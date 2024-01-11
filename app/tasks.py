@@ -1,11 +1,11 @@
-from app.models import Images
 import requests
 import tempfile
 import threading
-
-from django.core import files
 import uuid
+
 from imagegenerator.celery import app
+from django.core import files
+from app.models import Images
 
 
 @app.task(bind=True)
